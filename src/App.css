@@ -6,7 +6,7 @@
   bottom: 0;
   margin: auto;
   height: 50vh;
-  animation: spin-logo infinite 5s linear;
+  animation: spin-logo infinite 8s linear;
 }
 
 @keyframes spin-logo {
