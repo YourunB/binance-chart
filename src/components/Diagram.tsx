@@ -22,7 +22,7 @@ const Diagram = () => {
       console.error(error);
     }
   };
-  
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -33,34 +33,31 @@ const Diagram = () => {
 
   return (
     <>
-      {(data && data.length > 0) && (
+      {data && data.length > 0 && (
         <VictoryChart
           theme={VictoryTheme.material}
           domainPadding={{ x: 4 }}
-          scale={{ x: "time" }}
+          scale={{ x: 'time' }}
           width={1000}
           height={400}
         >
-          <VictoryAxis 
+          <VictoryAxis
             tickFormat={(t) => `${new Date(t).getHours()} ч.`}
             style={{
-              tickLabels: { fontSize: 10 }
+              tickLabels: { fontSize: 10 },
             }}
           />
-          <VictoryAxis 
+          <VictoryAxis
             dependentAxis
             style={{
-              tickLabels: { fontSize: 10 }
+              tickLabels: { fontSize: 10 },
             }}
           />
-          <VictoryCandlestick
-            data={data}
-            candleColors={{ positive: "green", negative: "red" }}
-          />
-      </VictoryChart>
+          <VictoryCandlestick data={data} candleColors={{ positive: 'green', negative: 'red' }} />
+        </VictoryChart>
       )}
     </>
-  )
-}
+  );
+};
 
-export default Diagram
+export default Diagram;
