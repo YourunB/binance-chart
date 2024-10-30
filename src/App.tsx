@@ -6,13 +6,20 @@ import { useState } from 'react';
 import './App.css';
 
 const App = () => {
-  const [binanceData, setBinanceData] = useState<any | null>(null);
+  const [data, setData] = useState<any | null>(null);
   
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await getBinanceDataApi();
-        setBinanceData(result);
+        const data = await getBinanceDataApi();
+        const dataParse = data.map((v: any) => ({
+          time: new Date(v[0]).toLocaleString(),
+          open: parseFloat(v[1]),
+          high: parseFloat(v[2]),
+          low: parseFloat(v[3]),
+          close: parseFloat(v[4]),
+        }));
+        setData(dataParse);
       } catch (error) {
         console.error(error);
       }
@@ -21,7 +28,7 @@ const App = () => {
     fetchData();
   }, []);
 
-  console.log(binanceData)
+  console.log(data)
 
   return (
     <>
