@@ -30,8 +30,6 @@ const App = () => {
     fetchData();
   }, []);
 
-  console.log(data)
-
   return (
     <>
       <img src={viteLogo} className="logo" alt="Binance" />
@@ -43,27 +41,29 @@ const App = () => {
             theme={VictoryTheme.material}
             domainPadding={{ x: 4 }}
             scale={{ x: "time" }}
+            width={1000}
+            height={400}
           >
 
-          <VictoryAxis 
-            tickFormat={(t) => `${new Date(t).getHours()} ч.`}
-            style={{
-              tickLabels: { fontSize: 4 }
-            }}
-          />
+            <VictoryAxis 
+              tickFormat={(t) => `${new Date(t).getHours()} ч.`}
+              style={{
+                tickLabels: { fontSize: 10 }
+              }}
+            />
 
-          <VictoryAxis 
-            dependentAxis
-            style={{
-              tickLabels: { fontSize: 4 }
-            }}
-          />
+            <VictoryAxis 
+              dependentAxis
+              style={{
+                tickLabels: { fontSize: 10 }
+              }}
+            />
 
-          <VictoryCandlestick
-            data={data}
-            candleColors={{ positive: "green", negative: "red" }}
-          />
-          
+            <VictoryCandlestick
+              data={data}
+              candleColors={{ positive: "green", negative: "red" }}
+            />
+
         </VictoryChart>
         )}
       </div>
