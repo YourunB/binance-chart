@@ -1,0 +1,1 @@
+html{background:#000;color:#fff;overflow-x:hidden}.logo{position:fixed;left:0;right:0;top:0;bottom:0;margin:auto;height:50vh;animation:spin-logo infinite 8s linear}h2{color:#f3ba2f}@keyframes spin-logo{0%{transform:rotateY(0)}to{transform:rotateY(360deg)}}
