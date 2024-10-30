@@ -11,7 +11,8 @@
     "lint": "eslint **/*.ts",
     "format": "npx prettier . --write",
     "ci:format": "npx prettier . --check",
-    "deploy": "gh-pages -d build"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^18.3.1",
