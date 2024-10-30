@@ -5,7 +5,7 @@ import './App.css';
 const App = () => {
   return (
     <>
-      <img src={viteLogo} className="logo" alt="Vite logo" />
+      <img src={viteLogo} className="logo" alt="Binance" />
     </>
   )
 }

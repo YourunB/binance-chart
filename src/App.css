@@ -1,0 +1,13 @@
+.logo {
+  height: 50vh;
+  animation: spin-logo infinite 5s linear;
+}
+
+@keyframes spin-logo {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
