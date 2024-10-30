@@ -1,3 +1,9 @@
+html {
+  background: black;
+  color: white;
+  overflow-x: hidden;
+}
+
 .logo {
   position: fixed;
   left: 0;
@@ -7,6 +13,10 @@
   margin: auto;
   height: 50vh;
   animation: spin-logo infinite 8s linear;
+}
+
+h2 {
+  color: #f3ba2f;
 }
 
 @keyframes spin-logo {
