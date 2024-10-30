@@ -6,7 +6,6 @@ export const getBinanceDataApi = async () => {
       `${url}api/v3/klines?symbol=BTCUSDT&interval=1h&limit=1000`
     );
     const data = await response.json();
-    console.log(data);
     return data;
   } catch (error) {
     console.error('Error fetching data:', error);

@@ -1,13 +1,27 @@
 import viteLogo from '/binance-logo.svg';
 import { useEffect } from 'react';
 import { getBinanceDataApi } from './api/getBinanceDataApi';
+import { useState } from 'react';
 
 import './App.css';
 
 const App = () => {
+  const [binanceData, setBinanceData] = useState<any | null>(null);
+  
   useEffect(() => {
-    getBinanceDataApi();
+    const fetchData = async () => {
+      try {
+        const result = await getBinanceDataApi();
+        setBinanceData(result);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
   }, []);
+
+  console.log(binanceData)
 
   return (
     <>
