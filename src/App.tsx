@@ -46,7 +46,7 @@ const App = () => {
           >
 
           <VictoryAxis 
-            tickFormat={(t) => `${new Date(t).getDate()}/${new Date(t).getFullYear()}`}
+            tickFormat={(t) => `${new Date(t).getHours()} ч.`}
             style={{
               tickLabels: { fontSize: 4 }
             }}
@@ -61,7 +61,7 @@ const App = () => {
 
           <VictoryCandlestick
             data={data}
-            candleColors={{ positive: "green", negative: "red" }} // Цвета свечей
+            candleColors={{ positive: "green", negative: "red" }}
           />
           
         </VictoryChart>
